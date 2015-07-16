@@ -1,0 +1,42 @@
+﻿@model DemoCrudGenericRepository.Models.DB.Contact
+
+@using (Html.BeginForm("Add", "TestCrudRepository", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLable">Add New Item</h4>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label class="col-md-3">First Name:</label>
+                <div>
+                    @Html.TextBoxFor(p => p.FirstName, null, new { @class = "form-control", @placeholder = "First Name" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3">Last Name:</label>
+                <div>
+                    @Html.TextBoxFor(p => p.LastName, null, new { @class = "form-control", @placeholder = "Last Name" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3">Address:</label>
+                <div>
+                    @Html.TextBoxFor(p => p.Address, null, new { @class = "form-control", @placeholder = "Address" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3">Email:</label>
+                <div>
+                    @Html.TextBoxFor(p => p.Email, null, new { @class = "form-control", @placeholder = "Email" })
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Add</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+}
